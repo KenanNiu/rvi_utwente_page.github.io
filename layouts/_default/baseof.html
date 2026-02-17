@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#ffffff; color:#222;}
+    header {padding:40px; text-align:center; border-bottom:1px solid #eee;}
+    nav a {margin: 0 15px; text-decoration:none; color:#004080; font-weight:500;}
+    section {max-width:900px; margin:60px auto; padding:0 20px;}
+    h1,h2,h3 {color:#111;}
+    footer {text-align:center; padding:40px; border-top:1px solid #eee; color:#666;}
+    .btn {display:inline-block; margin:10px; padding:10px 20px; background:#004080; color:white; text-decoration:none;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>{{ .Site.Params.lab_name }}</h1>
+  <p>{{ .Site.Params.tagline }}</p>
+  <div>
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </div>
+</header>
+
+<section>
+  {{ block "main" . }}{{ end }}
+</section>
+
+<footer>
+  © 2026 {{ .Site.Params.lab_name }} | Directed by {{ .Site.Params.director }}
+</footer>
+
+</body>
+</html>

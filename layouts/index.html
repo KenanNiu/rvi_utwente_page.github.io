@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h2>About the Lab</h2>
+<p><strong>{{ .Site.Params.director }}</strong>, {{ .Site.Params.position }}</p>
+<p>{{ .Site.Params.tagline }}</p>
+
+<p>
+<a class="btn" href="{{ .Site.Params.scholar }}">Google Scholar</a>
+<a class="btn" href="{{ .Site.Params.github }}">GitHub</a>
+</p>
+
+{{ end }}
